@@ -54,12 +54,11 @@ const buyukHarfliDizi = dizi1.map(eleman=>eleman.toUpperCase());
 console.log(buyukHarfliDizi);
 
 // 7- Verilen bir dizinin elemanlarını 1 ile 10 arasında rastgele bir sayıyla toplayıp yeni bir dizi oluşturan bir map döngüsü oluşturun.
-const karisikDizi=[];
+let karisikDizi=[];
 let rastgeleSayi=parseInt(Math.random()*10+1);
 console.log(rastgeleSayi);
 karisikDizi = dizi.map(eleman=>eleman+rastgeleSayi);
 console.log(karisikDizi);
-
 
 // 8- Verilen bir stringin her bir kelimesini ters çevirerek yeni bir dizi oluşturan bir map döngüsü oluşturun.
 
