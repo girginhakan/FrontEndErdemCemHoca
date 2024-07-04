@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="firstName">First Name:</label>
+        <br>
+        <input id="firstName" type="text">
+        <br>
+        <label for="lastName">LastName:</label>
+        <br>
+        <input id="lastName" type="text">
+        <br>
+        <label> E-mail:
+            <br>
+            <input type="email">
+        </label>
+        <br><br>
+        <label for="phoneNumber">Phone Number:</label>
+        <br>
+        <input pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" id="firstName" type="text" placeholder="543-123-45-67">
+        <br>
+        <label for="password">Password:</label>
+        <br>
+        <input id="password" type="password">
+        <br>
+
+        <label for="gender">Gender:</label>
+        <br>
+        <select name="" id="">
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+        </select>
+        <br>
+        <p>Martial Status</p>
+        <label for="single">Single</label>
+        <input name="gender" value="k" type="radio">
+        <label for="single">Married</label>
+        <input name="gender" value="k" type="radio">
+
+
+        <br><br>
+        <label for="birthdate">Birthdate</label>
+        <br>
+        <input id="birthdate" type="date">
+        <br><br>
+        <label for="month">Birthdate(Month and Year)</label>
+        <br>
+        <input id="month" type="month">
+        <br><br>
+        <label for="week">Week</label>
+        <br>
+        <input id="week" type="week">
+        <br><br>
+        <label for="time">Time</label>
+        <br>
+        <input id="time" type="time">
+        <br><br>
+        <label for="about">About:</label>
+        <br>
+        <textarea rows="5" cols="50" placeholder="
+        Your message"></textarea>
+        <br><br>
+
+        <label>Which Course:</label>
+        <br>
+        <select size="5">
+            <option value="">HTML</option>
+            <option value="">CSS</option>
+            <option value="">Javascript</option>
+            <option value="">React</option>
+            <option value="">C#</option>
+        </select>
+
+        <br><br>
+        <label for="quantity">Quantity(1-5)</label>
+        <br>
+        <input id="quantity" type="number" maxlength="5" minlength="1">
+        <br><br>
+        <label for="interval">Interval(0-50)</label>
+        <br>
+        <input type="range" step="5" maxlength="50">
+        <br><br>
+        <label for="courseType">Course Type:</label>
+        <br>
+        <input type="checkbox"><label>Online</label>
+        <input type="checkbox"><label>Hybrid</label>
+        <input type="checkbox"><label>Video</label>
+        <br><br>
+        <label for="favoriteColor">Favorite Color:</label>
+        <br>
+        <input type="color">
+        <br><br>
+        <label for="url">URL:</label>
+        <br>
+        <input type="url">
+        <br><br>
+        <label for="file">Select File</label>
+        <br>
+        <input type="file" value="Dosya Seç">
+        <br><br>
+       <input type="submit" value="Save">
+       <br><br>
+       <button>Save</button>
+    </form>
+</body>
+
+</html>
