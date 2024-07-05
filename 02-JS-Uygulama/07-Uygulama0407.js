@@ -135,4 +135,5 @@ console.log(dizi.every(eleman=>eleman<0));
 // ---------------sort-------------------
 // 18- Verilen bir dizi içerisindeki sayıları sıralayan bir örnek
 
-console.log(dizi2.sort((a, b) => a - b));
+console.log(dizi2.sort((a, b) => a - b));//orjinal diziyi kopyalamıyor üzerine  yazıyor.
+console.log(dizi2.toSorted((a, b) => a - b));//orjinal diziyi kopyalayıp başka bir diziye aktarıyor.
