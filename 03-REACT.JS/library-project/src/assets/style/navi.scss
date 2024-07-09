@@ -1,0 +1,34 @@
+nav{
+    background-color: #240750;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    .brand{
+        font-size: 20px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        cursor: default;
+        img{
+            width: 90px;
+        }
+    }
+    //& li demek scss de bir üst dizinin adını ifade eder
+    .liste{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        li{
+            transition: .3s;
+            cursor: pointer;
+            &:hover{
+                color:#57A6A1 ;
+                text-decoration: underline;
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
