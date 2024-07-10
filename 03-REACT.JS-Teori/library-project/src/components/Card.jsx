@@ -1,20 +1,21 @@
 import React from 'react'
 import '../assets/style/card.scss'
+import Book from '../assets/img/default-book.jpg'
 
-const Card = (props) => {
+const Card = ({kitap,kitapSil}) => {
 
   return (
     <div className='card'>
-      <img src={props.kitap.kitapResmi} alt="" />
+      <img src={kitap.kitapResmi?kitap.kitapResmi:Book} alt={kitap.kitapAdi+"_kapak"} />
 
       <div className="card-body">
-        <button className='delete'>Sil</button>
+        <button onClick={()=>kitapSil(kitap.id)} className='delete'>Sil</button>
         <button className='edit'>Düzenle</button>
-        <h4>{props.kitap.kitapAdi}</h4>
-        <p>{props.kitap.kitapYazari}</p>
-        <p>{props.kitap.kitapKategorisi}</p>
-        <p>{props.kitap.kitapSayfaSayisi}</p>
-        <p>{props.kitap.kitapAciklamasi.substring(0,100)}</p>
+        <h4>{kitap.kitapAdi}</h4>
+        <p>{kitap.kitapYazari}</p>
+        <p>{kitap.kitapKategorisi}</p>
+        <p>{kitap.kitapSayfaSayisi}</p>
+        <p>{kitap.kitapAciklamasi.substring((0,kitap.kitapAciklamasi).substring(0,100).lastIndexOf(" "))+"..."}</p>
       </div>
     </div>
   )
