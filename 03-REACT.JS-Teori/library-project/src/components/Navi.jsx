@@ -1,23 +1,24 @@
-import React from 'react'
-import Brand from '../assets/img/logo.png'
-import '../assets/style/navi.scss'
+import React from "react";
+import Brand from "../assets/img/logo.png";
+import "../assets/style/navi.scss";
 
-const Navi = ({navHead}) => {
+const Navi = ({ navHead, kategoriler,setSecilenKategori }) => {
+  
+
   return (
     <nav>
-        <div className="brand">
-            <img src={Brand} alt="" />
-            <h3>{navHead}</h3>
-        </div>
-        <ul className="liste">
-            <li>Yazılım</li>
-            <li>Tarih</li>
-            <li>Roman</li>
-            <li>Finans</li>
-            <li>Diğer</li>
-        </ul>
+      <div className="brand">
+        <img src={Brand} alt="" />
+        <h3>{navHead}</h3>
+      </div>
+      <ul className="liste">
+        {
+        kategoriler.map((kategori) => (
+          <li onClick={(e)=>setSecilenKategori(e.target.innerText)} key={kategori.kategoriId}>{kategori.kategoriAdi}</li>
+        ))}
+      </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Navi
+export default Navi;

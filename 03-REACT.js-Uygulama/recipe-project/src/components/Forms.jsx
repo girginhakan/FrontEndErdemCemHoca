@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../assets/style/forms.scss'
 
 const Forms = ({recipeEkle,recipes}) => {
@@ -33,7 +33,8 @@ const Forms = ({recipeEkle,recipes}) => {
     <div class="form-group">
       <input value={image} onChange={e=>setkImage(e.target.value)} type="url" placeholder='Image URL' id="image-url" name="image-url" />
     </div>
-    <button type="submit" class="form-button">Add Recipe</button>
+    <input disabled={title === "" || description === ""} type="submit" class="form-button" value='Add Recipe'/>
+
   </form>
 </div>
   )

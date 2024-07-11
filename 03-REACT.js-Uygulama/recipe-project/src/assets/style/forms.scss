@@ -1,50 +1,78 @@
-// Formun genel stilini belirleyelim
+/* Formun genel stilini belirleyelim */
 .form-container {
-    width: 800px;
-    margin: 10px auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+  width: 90%;
+  max-width: 800px;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  // border: 2px solid #006769;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Butonun stili */
+.form-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #006769;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.form-button:hover {
+  background-color: #004c54;
+}
+
+/* Buton disabled olduğunda uygulanacak stil */
+.form-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Medya sorguları ile responsive tasarım */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 15px;
   }
-  
-  // Form elemanlarının ortak stili
-  .form-group {
-    margin-bottom: 15px;
-  
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-  
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-  
-    textarea {
-      resize: vertical; // Kullanıcının dikey olarak yeniden boyutlandırmasına izin verir
-    }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 8px;
+    font-size: 0.9rem;
   }
-  
-  // Butonun stili
+
   .form-button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #28a745;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: center;
-  
-    &:hover {
-      background-color: #218838;
-    }
+    padding: 8px;
+    font-size: 0.9rem;
   }
-  
+}
+input:focus,textarea:focus{
+  outline: 2px solid #006769;
+}
