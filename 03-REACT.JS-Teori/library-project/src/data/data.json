@@ -53,32 +53,75 @@
       "kitapSayfaSayisi": 272,
       "kitapResmi": "https://img.kitapyurdu.com/v1/getImage/fn:11599115/wh:true/wi:220",
       "kitapAciklamasi": "“Koca bir kavmin binlerce kilometreyi üç asır içinde geçtiğini düşünün… Bu, dünyayı değiştirmez de ne yapar? İşte Türkler dünyayı böyle değiştirdi. Bu sebeple, bizim hayalî bir tarih ve kahramanlar üretmeye değil, yalnızca doğruyu öğrenmeye ihtiyacımız var…”"
+    },
+    {
+      "id": "8",
+      "kitapAdi": "Zengin Baba Yoksul Baba",
+      "kitapYazari": " Robert T. Kiyosaki",
+      "kitapKategorisi": "Finans",
+      "kitapSayfaSayisi": "399",
+      "kitapResmi": "https://i.dr.com.tr/cache/500x400-0/originals/0001758255001-1.jpg",
+      "kitapAciklamasi": "Özellikle teknolojinin, robotların ve global bir ekonominin kuralları değiştirdiği bir dünyada, zengin olmak için yüksek gelirinizin olması gerektiği efsanesini çürütür.\n\n"
+    },
+    {
+      "id": "9",
+      "kitapAdi": "Ank 16",
+      "kitapYazari": "aaa",
+      "kitapKategorisi": "Kategori Seçiniz",
+      "kitapSayfaSayisi": "12345",
+      "kitapResmi": "",
+      "kitapAciklamasi": "12312 31223 13122"
+    },
+    {
+      "id": "10",
+      "kitapAdi": "asd",
+      "kitapYazari": "asd",
+      "kitapKategorisi": "Tarih",
+      "kitapSayfaSayisi": "11",
+      "kitapResmi": "",
+      "kitapAciklamasi": "asd"
+    },
+    {
+      "id": "11",
+      "kitapAdi": "Soytarılar, Dolandırıcılar, Yaygaracılar",
+      "kitapYazari": "Roger Scruton",
+      "kitapKategorisi": "Roman",
+      "kitapSayfaSayisi": 354,
+      "kitapResmi": "https://img.kitapyurdu.com/v1/getImage/fn:11765460/wh:true/wi:220",
+      "kitapAciklamasi": "Yüzyılın en önemli sağcı felsefecisi,Estetik üzerine kaleme aldığı eserler alanın temel taşı hükmünde;Analitik felsefe temelli, bilgi ve siyaset felsefesinde çığır açmış bir isim…",
+      "isDeleted": true
     }
   ],
   "kategoriler": [
     {
       "kategoriId": "0",
-      "kategoriAdi": "Tüm Kitaplar"
+      "kategoriAdi": "Tüm Kitaplar",
+      "id": "f98f"
     },
     {
       "kategoriId": "1",
-      "kategoriAdi": "Yazılım"
+      "kategoriAdi": "Yazılım",
+      "id": "4295"
     },
     {
       "kategoriId": "2",
-      "kategoriAdi": "Tarih"
+      "kategoriAdi": "Tarih",
+      "id": "403f"
     },
     {
       "kategoriId": "3",
-      "kategoriAdi": "Roman"
+      "kategoriAdi": "Roman",
+      "id": "5f05"
     },
     {
       "kategoriId": "1",
-      "kategoriAdi": "Finans"
+      "kategoriAdi": "Finans",
+      "id": "e311"
     },
     {
       "kategoriId": "5",
-      "kategoriAdi": "Diğer"
+      "kategoriAdi": "Diğer",
+      "id": "6cbe"
     }
   ]
 }

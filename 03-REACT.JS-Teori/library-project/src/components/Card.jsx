@@ -2,7 +2,7 @@ import React from 'react'
 import '../assets/style/card.scss'
 import Book from '../assets/img/default-book.jpg'
 
-const Card = ({kitap,kitapSil}) => {
+const Card = ({kitap,kitapSil,kartDuzenle}) => {
 
   return (
     <div className='card'>
@@ -10,7 +10,7 @@ const Card = ({kitap,kitapSil}) => {
 
       <div className="card-body">
         <button onClick={()=>kitapSil(kitap.id)} className='delete'>Sil</button>
-        <button className='edit'>Düzenle</button>
+        <button onClick={()=>kartDuzenle(kitap.id)} className='edit'>Düzenle</button>
         <h4>{kitap.kitapAdi}</h4>
         <p>{kitap.kitapYazari}</p>
         <p>{kitap.kitapKategorisi}</p>

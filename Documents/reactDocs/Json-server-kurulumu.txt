@@ -1,0 +1,11 @@
+JSON server kurmak için npm i -g json-server yazarak projee json-server kurulur.
+JSON SERVER BAŞLATMA
+[09:11] Erdem Sabri Beşik (BilgeAdam Akademi)
+npx json-server --watch "./src/data/data.
+
+json"
+ 
+ package.json içerisine sccripts in altına 
+ "api":"npx json-server --watch ./src/data/data.json"
+ yazarsak terminalde başta npm run dev yazarak proje başlatılır. 
+ Daha sonra başka bir terminalde npx json-server --watch ./src/data/data.json yazmak yerine npm run api yazmamız yeterli olur
