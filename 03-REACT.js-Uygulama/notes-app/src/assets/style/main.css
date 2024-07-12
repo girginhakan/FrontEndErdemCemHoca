@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    gap: 20px; /* İki div arasındaki boşluk */
+    width: 100%;
+    max-width: 1200px; /* Konteynerin maksimum genişliği */
+    margin: 0 auto;
+  }
+  
+  .notes-list, .form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 80%; /* İki divin genişliği */
+    box-sizing: border-box;
+    overflow: hidden; /* İçeriğin taşmasını önlemek için */
+  }
+  
+  .note-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+  
+  .note-item p {
+    text-align: center;
+    word-wrap: break-word; /* Uzun kelimelerin bölünerek taşmasını önler */
+    overflow-wrap: break-word; /* Uzun kelimelerin bölünerek taşmasını önler */
+    margin: 0;
+  }
+  
+  .note-buttons {
+    display: flex;
+    justify-content: center; /* Butonları ortala */
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .note-buttons button {
+    width: 100px; /* Butonların genişliği */
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .form-button {
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .iptal{
+    background-color: #95322b;
+
+  }
+  
+  .form-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  h3{
+    text-align: center;
+  }
+  
