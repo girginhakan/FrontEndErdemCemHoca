@@ -2,7 +2,7 @@
   "kitaplar": [
     {
       "id": "1",
-      "kitapAdi": "Körlük",
+      "kitapAdi": "Körlük123",
       "kitapYazari": "Jose Saramago",
       "kitapKategorisi": "Roman",
       "kitapSayfaSayisi": 320,
@@ -70,7 +70,8 @@
       "kitapKategorisi": "Kategori Seçiniz",
       "kitapSayfaSayisi": "12345",
       "kitapResmi": "",
-      "kitapAciklamasi": "12312 31223 13122"
+      "kitapAciklamasi": "12312 31223 13122",
+      "isDeleted": true
     },
     {
       "id": "10",
@@ -90,6 +91,25 @@
       "kitapResmi": "https://img.kitapyurdu.com/v1/getImage/fn:11765460/wh:true/wi:220",
       "kitapAciklamasi": "Yüzyılın en önemli sağcı felsefecisi,Estetik üzerine kaleme aldığı eserler alanın temel taşı hükmünde;Analitik felsefe temelli, bilgi ve siyaset felsefesinde çığır açmış bir isim…",
       "isDeleted": true
+    },
+    {
+      "id": "12",
+      "kitapAdi": "asd",
+      "kitapYazari": "asd",
+      "kitapKategorisi": "Roman",
+      "kitapSayfaSayisi": "123",
+      "kitapResmi": "",
+      "kitapAciklamasi": "123",
+      "isDeleted": true
+    },
+    {
+      "id": "13",
+      "kitapAdi": "Kötlük2",
+      "kitapYazari": "123",
+      "kitapKategorisi": "Yazılım",
+      "kitapSayfaSayisi": "12",
+      "kitapResmi": "",
+      "kitapAciklamasi": "12"
     }
   ],
   "kategoriler": [
@@ -114,7 +134,7 @@
       "id": "5f05"
     },
     {
-      "kategoriId": "1",
+      "kategoriId": "4",
       "kategoriAdi": "Finans",
       "id": "e311"
     },

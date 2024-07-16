@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "./Card";
+import DataContext from "../context/DataContext";
+import SearchBar from "./SearchBar";
 
-const CardList = ({kitaplar,kitapSil,secilenKategori,kartDuzenle}) => {
-
+const CardList = () => {
+  const {kitaplar,secilenKategori}= useContext(DataContext);
   return (
     <>
-    <h3 style={{marginLeft:"25px"}}>{secilenKategori} </h3>
+    <SearchBar/>
     <div className="card-list">
     {
       kitaplar.map((kitap) => 
-        !kitap.isDeleted && 
-        <Card kitap={kitap} kitapSil={kitapSil} key={kitap.id} kartDuzenle={kartDuzenle} />
+      (kitap.kitapKategorisi === secilenKategori||secilenKategori==="Tüm Kitaplar")&&
+        (!kitap.isDeleted && 
+        <Card kitap={kitap}  key={kitap.id}  />)
        // database deki silinen verileri öntüzde göstermemek için !kitap.isDeleted yazdık
       )
     }

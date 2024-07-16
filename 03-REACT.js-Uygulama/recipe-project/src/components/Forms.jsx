@@ -1,39 +1,33 @@
-import React,{useState} from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import '../assets/style/forms.scss'
+import DataContext from '../context/DataContext'
 
-const Forms = ({recipeEkle,recipes}) => {
-    const [title,setTitle]= useState("");
-    const [description,setDescription]= useState("");
-    const [image,setkImage]= useState("");
-
-    const handleSubmit =(e)=>{
-        e.preventDefault();
-        recipeEkle({
-            id:(Number(recipes[recipes.length-1].id)+1).toString(),
-            title:title,
-            description:description,
-            image:image,
-        });
-        setTitle("");
-        setDescription("");
-        setkImage("");
-        
-        
-      }
+const Forms = () => {
+    const {
+      secilenRecipe,
+      title,
+      description,
+      image,
+      setTitle,
+      setDescription,
+      setImage,
+      handleSubmit
+    } =useContext(DataContext);
     
   return (
-    <div class="form-container">
+    <div className="form-container">
   <form onSubmit={handleSubmit}>
-    <div class="form-group">
+
+    <div className="form-group">
       <input value={title} onChange={e=>setTitle(e.target.value)} type="text" id="recipe-title" placeholder='Recipe Title' name="recipe-title" />
     </div>
-    <div class="form-group">
+    <div className="form-group">
       <textarea value={description} onChange={e=>setDescription(e.target.value)} id="recipe-description" placeholder='Recipe Description' name="recipe-description" rows="5"></textarea>
     </div>
-    <div class="form-group">
-      <input value={image} onChange={e=>setkImage(e.target.value)} type="url" placeholder='Image URL' id="image-url" name="image-url" />
+    <div className="form-group">
+      <input value={image} onChange={e=>setImage(e.target.value)} type="url" placeholder='Image URL' id="image-url" name="image-url" />
     </div>
-    <input disabled={title === "" || description === ""} type="submit" class="form-button" value='Add Recipe'/>
+    <input disabled={title === "" || description === ""} type="submit" className="form-button" value={secilenRecipe?"Edit Recipe":"Add Recipe"}/>
 
   </form>
 </div>

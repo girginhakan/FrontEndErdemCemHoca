@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../assets/style/card.scss'
 import Book from '../assets/img/default-book.jpg'
+import DataContext from '../context/DataContext'
+import { FaRegTrashAlt } from "react-icons/fa";
+import { MdEdit } from "react-icons/md";
 
-const Card = ({kitap,kitapSil,kartDuzenle}) => {
-
+const Card = ({kitap}) => {
+  const {kitapSil,kartDuzenle,search}= useContext(DataContext);
   return (
+    (kitap.kitapAdi.toLowerCase().startsWith(search.toLowerCase())||
+    kitap.kitapYazari.toLowerCase().startsWith(search.toLowerCase())
+  )&&
     <div className='card'>
       <img src={kitap.kitapResmi?kitap.kitapResmi:Book} alt={kitap.kitapAdi+"_kapak"} />
 
       <div className="card-body">
-        <button onClick={()=>kitapSil(kitap.id)} className='delete'>Sil</button>
-        <button onClick={()=>kartDuzenle(kitap.id)} className='edit'>Düzenle</button>
+        <button onClick={()=>kitapSil(kitap.id)} className='delete'><FaRegTrashAlt size={50} /></button>
+        <button onClick={()=>kartDuzenle(kitap.id)} className='edit'><MdEdit size={50} /></button>
         <h4>{kitap.kitapAdi}</h4>
         <p>{kitap.kitapYazari}</p>
         <p>{kitap.kitapKategorisi}</p>
