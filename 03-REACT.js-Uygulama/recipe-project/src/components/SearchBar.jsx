@@ -6,9 +6,11 @@ import { FaSearch } from "react-icons/fa";
 const SearchBar = () => {
     const{setSearch}=useContext(DataContext);
   return (
-    <div className='search'>
-        <input onChange={(e)=>setSearch(e.target.value)} type='text' placeholder='Ara...'/><FaSearch size={50} />
+    <div className='search-bar'>
+        <input onChange={(e)=>setSearch(e.target.value)} className='search-input' type='text' placeholder='Tarif ara...'/>
+      <FaSearch className="search-icon" size={16} />
     </div>
+    
   )
 }
 

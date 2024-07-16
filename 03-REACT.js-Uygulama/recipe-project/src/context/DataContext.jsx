@@ -75,7 +75,7 @@ export const DataProvider = ({ children }) => {
       setImage(secilenRecipe.image);
     }
   }, [secilenRecipe]);
-
+//-----------------------------------------------------
   return (
     <DataContext.Provider
       value={{
