@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-router": "^6.25.0",
+    "sass": "^1.77.8"
+  }
+}
