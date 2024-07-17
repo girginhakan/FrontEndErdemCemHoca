@@ -1,4 +1,43 @@
-*{
+
+.main{
     text-align: center;
-    color: #006769;
+    padding: 50px;
+    img{
+        border-radius: 36% 64% 36% 64% / 47% 73% 27% 53% ;
+        max-width: 50%;
+        height: auto;
+        transition:  .5s;
+        &:hover{
+            transform: scale(1.1);
+            box-shadow:  0 0 550px #004e50;
+        }
+    }
+    p{
+        font-size: 18px;
+        font-weight: bold;
+    }
 }
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+.tooltip {
+   
+    font-family: monospace;
+    display: none;
+    position: absolute;
+    bottom: 50%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 200; 
+}
+.image-container:hover .tooltip {
+    display: block; 
+    color: #E6FF94;
+    font-size: 22px;
+  }

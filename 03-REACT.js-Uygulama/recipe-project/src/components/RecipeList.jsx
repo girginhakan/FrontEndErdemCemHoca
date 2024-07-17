@@ -13,10 +13,8 @@ const RecipeList = () => {
     <div className="card-list">
     {
       recipes.map((recipe) => 
-        <Link to={recipe.id} key={recipe.id}>
           !recipe.isDeleted &&
           <Recipe recipe={recipe}   key={recipe.id} />
-        </Link>
         
       )
     }

@@ -28,7 +28,14 @@ const Recipe = ({ recipe }) => {
             <button onClick={() => recipeSil(recipe.id)} className="delete">
               Sil
             </button>
-            <Link to="/recipe-app/forms"><button onClick={() => recipeDuzenle(recipe.id)} className="edit">Düzenle</button></Link>
+            <Link to="/recipe-app/forms">
+              <button onClick={() => recipeDuzenle(recipe.id)} className="edit">
+                Düzenle
+              </button>
+            </Link>
+            <Link to={recipe.id} key={recipe.id}>
+              <button className="detail">Detay</button>
+            </Link>
           </div>
         </div>
       </div>

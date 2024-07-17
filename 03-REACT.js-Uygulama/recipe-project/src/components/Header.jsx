@@ -13,13 +13,13 @@ const Header = () => {
         </div>
         <ul className="liste">
           <li>
-            <NavLink to="main">Home</NavLink>
+            <NavLink className="navLink" to="main">Home</NavLink>
           </li>
           <li>
-            <NavLink to="forms">Add Recipe</NavLink>
+            <NavLink className="navLink" to="forms">Add Recipe</NavLink>
           </li>
           <li>
-            <NavLink to="recipelist">All Recipes</NavLink>
+            <NavLink className="navLink" to="recipelist">All Recipes</NavLink>
           </li>
         </ul>
       </nav>
