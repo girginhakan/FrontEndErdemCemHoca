@@ -76,6 +76,10 @@ export const DataProvider = ({ children }) => {
     }
   }, [secilenRecipe]);
 //-----------------------------------------------------
+const returnForm =()=>{
+  // <Link to="/recipe-app/recipelist"></Link>
+  navigate("/recipe-app/recipelist")
+}
   return (
     <DataContext.Provider
       value={{
@@ -90,7 +94,8 @@ export const DataProvider = ({ children }) => {
         setDescription,
         setImage,
         handleSubmit,
-        search,setSearch
+        search,setSearch,
+        returnForm
       }}
     >
       {children}

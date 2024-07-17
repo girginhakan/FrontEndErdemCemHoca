@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import Recipe from './Recipe'
 import DataContext from '../context/DataContext'
 import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom';
 
 
 const RecipeList = () => {
@@ -12,8 +13,10 @@ const RecipeList = () => {
     <div className="card-list">
     {
       recipes.map((recipe) => 
-        !recipe.isDeleted &&
-        <Recipe recipe={recipe}   key={recipe.id} />
+        <Link to={recipe.id} key={recipe.id}>
+          !recipe.isDeleted &&
+          <Recipe recipe={recipe}   key={recipe.id} />
+        </Link>
         
       )
     }

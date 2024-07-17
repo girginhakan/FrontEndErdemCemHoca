@@ -1,4 +1,4 @@
-/* Formun genel stilini belirleyelim */
+
 .form-container {
   width: 90%;
   max-width: 800px;
@@ -39,7 +39,7 @@
   resize: vertical;
 }
 
-/* Butonun stili */
+
 .form-button {
   width: 100%;
   padding: 10px;
@@ -50,6 +50,7 @@
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
+  margin-top: 10px;
 }
 
 .form-button:hover {
