@@ -4,13 +4,14 @@ import "../assets/style/search.css";
 import { FaSearch } from "react-icons/fa";
 
 const SearchBar = () => {
-  const { secilenKategori, setSearch } = useContext(DataContext);
+  const { state,dispatch } = useContext(DataContext);
   return (
+    //case_5
     <div className="search">
-      <h3 style={{ marginLeft: "25px" }}>{secilenKategori} </h3>
+      <h3 style={{ marginLeft: "25px" }}>{state.secilenKategori} </h3>
      
         <input className="input-field"
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => dispatch({type:"search",payload:e.target.value})}
           type="text"
           placeholder="Ara..."
         />

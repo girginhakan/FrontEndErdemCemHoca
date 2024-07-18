@@ -110,6 +110,24 @@
       "kitapSayfaSayisi": "12",
       "kitapResmi": "",
       "kitapAciklamasi": "12"
+    },
+    {
+      "id": "14",
+      "kitapAdi": "123",
+      "kitapYazari": "123321",
+      "kitapKategorisi": "Roman",
+      "kitapSayfaSayisi": "12344",
+      "kitapResmi": "",
+      "kitapAciklamasi": "asdasd dasd"
+    },
+    {
+      "id": "15",
+      "kitapAdi": "hakan222",
+      "kitapYazari": "hakan",
+      "kitapKategorisi": "Yazılım",
+      "kitapSayfaSayisi": "55555",
+      "kitapResmi": "",
+      "kitapAciklamasi": "dfsdfsdf"
     }
   ],
   "kategoriler": [

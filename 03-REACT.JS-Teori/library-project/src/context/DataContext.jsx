@@ -1,5 +1,6 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import { initialState, reducer } from "../reducer/reducer";
 
 //context oluşturulması
 const DataContext = createContext();
@@ -8,21 +9,20 @@ const DataContext = createContext();
 
 export const DataProvider = ({children}) => {
   // yapıdaki tüm state, metod ....etc. buraya taşınacak
-
+  const [state,dispatch]= useReducer(reducer,initialState);
 
 
   const companyName = "ANK-16";
 
-  const [secilenKategori, setSecilenKategori] = useState("Tüm Kitaplar");
-  const [kitaplar, setKitaplar] = useState([]);
-  const [kategoriler, setKategoriler] = useState([]);
-  const [secilenKitap, setSecilenKitap] = useState("");
-
+  const {secilenKitap,kitaplar,kitapAdi,kitapYazari,kitapKategorisi,kitapSayfaSayisi,kitapResmi,kitapAciklamasi}= state;
+  
   const kitapEkle = async (yeni) => {
     let url = "http://localhost:3005/kitaplar";
     if (!secilenKitap) {
       //kitap ekleme bölümü
-      setKitaplar((prev) => [...prev, yeni]);
+      //case_12
+      // setKitaplar((prev) => [...prev, yeni]);
+      dispatch({type:"kitapEkle",yeni});
 
       const response = await axios.post(url, yeni);
     } else {
@@ -31,31 +31,35 @@ export const DataProvider = ({children}) => {
       //backende ekler sadece
       const response2 = await axios.put(url, yeni);
       //front end de gösterme ve bulunduğu yerde değişiklik yapma
-      setKitaplar((prev) =>
-        prev.map((kitap) => {
-          if (kitap.id === secilenKitap.id) {
-            return { ...response2.data };
-          } else {
-            return { ...kitap };
-          }
-        })
-      );
-      setSecilenKitap("");
+      // setKitaplar((prev) =>
+      //   prev.map((kitap) => {
+      //     if (kitap.id === secilenKitap.id) {
+      //       return { ...response2.data };
+      //     } else {
+      //       return { ...kitap };
+      //     }
+      //   })
+      // );
+      // setSecilenKitap("");
+      dispatch({type:"kitapDuzenle",yeni});
     }
   };
   const kitapSil = async (id) => {
     // setKitaplar(kitaplar.filter(statedenGelen=>statedenGelen.id!==id));
-    setKitaplar((prev) =>
-      prev.filter((statedenGelen) => statedenGelen.id !== id)
-    );
+    // setKitaplar((prev) =>
+    //   prev.filter((statedenGelen) => statedenGelen.id !== id)
+    // );
+    //case_13
+    dispatch({type:"kitapSil",id});
     const url = `http://localhost:3005/kitaplar/${id}`;
     // const response = await axios.delete(url); //Veriyi database den sildiği için veri güvenliği açısından sıkıntılı bir durum o yüzden patch kullanarak kişi kitabı sildiğini düşünürken database den silinmeyecek
     const response = await axios.patch(url, { isDeleted: true });
   };
 
   const kartDuzenle = (id) => {
-    setSecilenKitap(kitaplar.find((item) => item.id === id));
-    console.log(kitaplar.find((item) => item.id === id));
+    // setSecilenKitap(kitaplar.find((item) => item.id === id));
+    //case_14
+    dispatch({type:"kartDuzenle",id});
   };
 
   const kateorileriGetir = async () => {
@@ -65,19 +69,11 @@ export const DataProvider = ({children}) => {
     // setKategoriler(kategoriler);
     const response = await axios.get(url);
     const kategoriler = await response.data;
-    setKategoriler(kategoriler);
+    // setKategoriler(kategoriler);
+    //case_2
+    dispatch({type:"kateorileriGetir",payload:kategoriler});
   };
 
-  // //filtreleme için 1. yol
-  // const kitaplariGetir = async () => {
-  //   let url = "http://localhost:3005/kitaplar";
-  //   if (secilenKategori && secilenKategori !== "Tüm Kitaplar") {
-  //     url += `?kitapKategorisi=${secilenKategori}`;
-  //   }
-  //   const response = await fetch(url);
-  //   const kitaplar = await response.json();
-  //   setKitaplar(kitaplar);
-  // };
 
 
   
@@ -85,7 +81,9 @@ export const DataProvider = ({children}) => {
     let url = "http://localhost:3005/kitaplar";
     const response = await fetch(url);
     const kitaplar = await response.json();
-    setKitaplar(kitaplar);
+    // setKitaplar(kitaplar);
+    //case_1
+    dispatch({type:"kitaplariGetir",payload:kitaplar})
   };
 
 
@@ -95,22 +93,17 @@ export const DataProvider = ({children}) => {
     kitaplariGetir();
 
   }, []);
-  useEffect(() => {
-    // kitaplariGetir();//ayrı ayrıda yazılabilir bu şekilde birlikte de yapılabilir.
-    //kitaplariFiltrele();
-  }, [secilenKategori]);
+  // useEffect(() => {
+  //   // kitaplariGetir();//ayrı ayrıda yazılabilir bu şekilde birlikte de yapılabilir.
+  //   //kitaplariFiltrele();
+  // }, [secilenKategori]);
 
   //  kitaplariGetir();Bu şekilde metodu çalıştırırsak sürekli bir get isteği atar. ancak useeffect ile çalıştırılırsa sayfa yüklendiğinde 1 kez çalışır.
 
 
 //-----------------------------------------------------------------
 
-const [kitapAdi,setKitapAdi]= useState("");
-const [kitapYazari,setKitapYazari]= useState("");
-const [kitapKategorisi,setKitapKategorisi]= useState("Kategori Seçiniz");
-const [kitapSayfaSayisi,setKitapSayfaSayisi]= useState("");
-const [kitapResmi,setKitapResmi]= useState("");
-const [kitapAciklamasi,setKitapAciklamasi]= useState("");
+
 
 
 const handleSubmit =(e)=>{
@@ -126,51 +119,37 @@ const handleSubmit =(e)=>{
       kitapAciklamasi:kitapAciklamasi
 
   });
-  setKitapAdi("");
-  setKitapYazari("");
-  setkitapKategorisi("Kategori seçiniz");
-  setKitapResmi("");
-  setkitapSayfaSayisi("");
-  setkitapAciklamasi("");
+  // setKitapAdi("");
+  // setKitapYazari("");
+  // setkitapKategorisi("Kategori seçiniz");
+  // setKitapResmi("");
+  // setkitapSayfaSayisi("");
+  // setkitapAciklamasi("");
+  //case_3
+  dispatch({type:"resetForm"});
 }
-useEffect(()=>{
- if (secilenKitap) {
-  setKitapAdi(secilenKitap.kitapAdi);
-  setKitapYazari(secilenKitap.kitapYazari);
-  setKitapKategorisi(secilenKitap.kitapKategorisi);
-  setKitapResmi(secilenKitap.kitapResmi);
-  setKitapSayfaSayisi(secilenKitap.kitapSayfaSayisi);
-  setKitapAciklamasi(secilenKitap.kitapAciklamasi);
- }
-},[secilenKitap])
+// useEffect(()=>{
+//  if (secilenKitap) {
+//   setKitapAdi(secilenKitap.kitapAdi);
+//   setKitapYazari(secilenKitap.kitapYazari);
+//   setKitapKategorisi(secilenKitap.kitapKategorisi);
+//   setKitapResmi(secilenKitap.kitapResmi);
+//   setKitapSayfaSayisi(secilenKitap.kitapSayfaSayisi);
+//   setKitapAciklamasi(secilenKitap.kitapAciklamasi);
+//  }
+// },[secilenKitap])
 
 //----------------------------------------
-const [search,setSearch]=useState("");
+
 
 
 
 
   return <DataContext.Provider value={{
-    companyName, kategoriler,setSecilenKategori,// Navi componentinden gelenler,
-        secilenKitap,
-        kitapAdi,
-        kitapYazari,
-        kitapKategorisi,
-        kitapResmi,
-        kitapSayfaSayisi,
-        kitapAciklamasi,
-        setKitapAdi,
-        setKitapYazari,
-        setKitapKategorisi,
-        setKitapResmi,
-        setKitapSayfaSayisi,
-        setKitapAciklamasi,
+        companyName, 
         handleSubmit,//Form Componentinden gelenler
-        kitaplar,secilenKategori,// CardListten gelenler
         kitapSil,kartDuzenle,//Card componentten gelenler
-        search,setSearch //searchdab gelenler
-
-
+        state,dispatch
   }}>
         {children}
     </DataContext.Provider>;

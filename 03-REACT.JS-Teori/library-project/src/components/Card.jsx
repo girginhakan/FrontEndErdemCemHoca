@@ -6,10 +6,10 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
 const Card = ({kitap}) => {
-  const {kitapSil,kartDuzenle,search}= useContext(DataContext);
+  const {kitapSil,kartDuzenle,state}= useContext(DataContext);
   return (
-    (kitap.kitapAdi.toLowerCase().startsWith(search.toLowerCase())||
-    kitap.kitapYazari.toLowerCase().startsWith(search.toLowerCase())
+    (kitap.kitapAdi.toLowerCase().startsWith(state.search.toLowerCase())||
+    kitap.kitapYazari.toLowerCase().startsWith(state.search.toLowerCase())
   )&&
     <div className='card'>
       <img src={kitap.kitapResmi?kitap.kitapResmi:Book} alt={kitap.kitapAdi+"_kapak"} />
