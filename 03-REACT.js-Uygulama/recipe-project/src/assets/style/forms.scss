@@ -3,14 +3,19 @@
   width: 90%;
   max-width: 800px;
   margin: 10px auto;
+  margin-top: 50px;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 130px -6px 255px 32px rgba(183,255,0,0.5),
+-130px -6px 255px 128px rgba(0,78,80,0.5);
   background-color: #fff;
   
 
   h2 {
     text-decoration: underline;
+    text-align: center;
+    color: rgba(0,78,80,1);
     margin-top: 0px;
     margin-bottom: 10px auto;
   }

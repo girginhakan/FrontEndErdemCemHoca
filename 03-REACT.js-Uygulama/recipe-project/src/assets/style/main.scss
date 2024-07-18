@@ -9,7 +9,8 @@
         transition:  .5s;
         &:hover{
             transform: scale(1.1);
-            box-shadow:  0 0 550px #004e50;
+            box-shadow: 130px -6px 255px 77px rgba(0,78,80,0.5),
+-130px -6px 255px 128px rgba(0,78,80,0.5);
         }
     }
     p{
@@ -38,6 +39,6 @@
 }
 .image-container:hover .tooltip {
     display: block; 
-    color: #E6FF94;
+    color: rgb(230, 255, 148);
     font-size: 22px;
   }

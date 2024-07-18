@@ -128,6 +128,15 @@
       "kitapSayfaSayisi": "55555",
       "kitapResmi": "",
       "kitapAciklamasi": "dfsdfsdf"
+    },
+    {
+      "id": "16",
+      "kitapAdi": "burak2",
+      "kitapYazari": "burak",
+      "kitapKategorisi": "Diğer",
+      "kitapSayfaSayisi": "123",
+      "kitapResmi": "",
+      "kitapAciklamasi": "123"
     }
   ],
   "kategoriler": [

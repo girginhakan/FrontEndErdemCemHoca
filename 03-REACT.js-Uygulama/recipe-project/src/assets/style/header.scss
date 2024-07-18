@@ -23,13 +23,14 @@ nav{
         align-items: center;
         gap: 25px;
         li{
+            
             .active{
                 color: #adee4a;
                 font-size:20px ;
                 font-weight: bold;
             }
             color: #E6FF94;
-            font-size: 15px;
+            font-size: 20px;
             transition: .3s;
             cursor: pointer;
             &:hover{

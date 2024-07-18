@@ -6,6 +6,7 @@ import Forms from "./components/Forms";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Loading from "./components/Loading";
 import RecipeDetail from "./components/RecipeDetail";
+import About from "./components/About";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="forms" element={<Forms />} />
           <Route path="recipelist" element={<RecipeList />} />
           <Route path="recipelist/:recipeId" element={<RecipeDetail />} />
+          <Route path="about" element={<About/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

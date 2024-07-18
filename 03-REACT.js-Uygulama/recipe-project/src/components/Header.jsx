@@ -15,11 +15,15 @@ const Header = () => {
           <li>
             <NavLink className="navLink" to="main">Home</NavLink>
           </li>
+          
           <li>
             <NavLink className="navLink" to="forms">Add Recipe</NavLink>
           </li>
           <li>
             <NavLink className="navLink" to="recipelist">All Recipes</NavLink>
+          </li>
+          <li>
+            <NavLink className="navLink" to="about">About</NavLink>
           </li>
         </ul>
       </nav>
