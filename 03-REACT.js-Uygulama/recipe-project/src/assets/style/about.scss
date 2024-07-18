@@ -1,22 +1,28 @@
 main {
     padding: 20px;
+
     .about {
         max-width: 800px;
         margin: auto;
+
         .company-info {
             text-align: center;
+
             p {
                 line-height: 1.6;
                 font-size: 18px;
             }
-            h1{
+
+            h1 {
                 font-size: 30px;
             }
         }
+
         .team-members {
             margin-top: 30px;
             text-align: center;
-            h2{
+
+            h2 {
                 text-align: center;
                 font-weight: bold;
                 font-size: 25px;
@@ -38,13 +44,13 @@ main {
                         h3 {
                             font-size: 20px;
                             margin-bottom: 5px;
-                            text-align: center; // İsim ortalanması
+                            text-align: center;
                         }
 
                         p {
                             font-size: 16px;
                             color: #666;
-                            text-align: center; // Title ortalanması
+                            text-align: center;
                         }
                     }
 
@@ -55,6 +61,12 @@ main {
                         object-fit: cover;
                         border: 5px solid #fff;
                         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                        transition: .5s;
+
+                        &:hover {
+                            transform: scale(1.3);
+                            box-shadow: 130px -6px 255px 32px rgba(183, 255, 0, 0.5),-130px -6px 255px 128px rgba(0, 78, 80, 0.5);
+                        }
                     }
                 }
             }

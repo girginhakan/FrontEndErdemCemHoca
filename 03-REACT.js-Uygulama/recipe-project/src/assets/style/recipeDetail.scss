@@ -1,7 +1,10 @@
 .product-detail {
+
+    max-width: 400px;
+    height: auto;
     width: 100%;
-    max-width: 500px;
     margin: 0 auto;
+    margin-bottom: 41px;
     margin-top: 30px;
 
     background-color: #f9f9f9;
@@ -44,8 +47,7 @@
     display: block;
     text-align: center;
       width: 100%;
-      height: 100%;
-      padding: 20px;
+      padding: 10px;
       text-decoration: none;
       background-color: #7fae5f;
       color: white;

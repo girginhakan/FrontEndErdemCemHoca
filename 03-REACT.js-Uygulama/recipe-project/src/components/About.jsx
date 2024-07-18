@@ -21,7 +21,7 @@ const About = () => {
         <div className="members-container">
           <div className="member">
             <img
-              src="https://randomuser.me/api/portraits/men/10.jpg"
+              src="https://avatars.githubusercontent.com/u/77413520?v=4"
               alt="Founder 1"
             />
             <div className="member-info">
@@ -33,7 +33,7 @@ const About = () => {
 
           <div className="member">
             <img
-              src="https://randomuser.me/api/portraits/men/99.jpg"
+              src="https://avatars.githubusercontent.com/u/154968593?v=4"
               alt="Founder 2"
             />
             <div className="member-info">

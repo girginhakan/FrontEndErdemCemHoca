@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Loading from "./components/Loading";
 import RecipeDetail from "./components/RecipeDetail";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="recipelist" element={<RecipeList />} />
           <Route path="recipelist/:recipeId" element={<RecipeDetail />} />
           <Route path="about" element={<About/>}/>
+          <Route path="contact" element={<Contact/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

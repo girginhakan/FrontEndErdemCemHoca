@@ -76,10 +76,23 @@ export const DataProvider = ({ children }) => {
     }
   }, [secilenRecipe]);
 //-----------------------------------------------------
-const returnForm =()=>{
-  // <Link to="/recipe-app/recipelist"></Link>
-  navigate("/recipe-app/recipelist")
-}
+const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [phone, setPhone] = useState('');
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const handleSubmitMessage = (e) => {
+    e.preventDefault();
+    setIsPopupVisible(true);
+    setTimeout(() => {
+      setIsPopupVisible(false);
+      setFullName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+    }, 4000); 
+  };
   return (
     <DataContext.Provider
       value={{
@@ -95,7 +108,9 @@ const returnForm =()=>{
         setImage,
         handleSubmit,
         search,setSearch,
-        returnForm
+        fullName,email,message,phone,isPopupVisible,
+        setFullName,setEmail,setMessage,setPhone,setIsPopupVisible,
+        handleSubmitMessage
       }}
     >
       {children}

@@ -8,7 +8,7 @@ const Header = () => {
     <>
       <nav>
         <div className="brand">
-          <img src={Logo} alt="" />
+          <NavLink to="main"><img src={Logo} alt="" /></NavLink>
           <h3>Recipe Platform</h3>
         </div>
         <ul className="liste">
@@ -25,9 +25,54 @@ const Header = () => {
           <li>
             <NavLink className="navLink" to="about">About</NavLink>
           </li>
+          <li>
+            <NavLink className="navLink" to="contact">Contact</NavLink>
+          </li>
         </ul>
       </nav>
       <Outlet />
+
+      <footer>
+        <div className="contact-info">
+          <h2>Contact information</h2>
+          <ul>
+            <li>Email: hakan@hakan.com</li>
+            <li>Phone: +90 123 456 789</li>
+          </ul>
+        </div>
+        <div className="social-media">
+          <h2>Follow us</h2>
+          <ul>
+            <li>
+              <a
+                href="https://www.facebook.com/hakan.girgin.37/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/Hakan_girgin24"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/hakangirgin24/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </>
   );
 };
