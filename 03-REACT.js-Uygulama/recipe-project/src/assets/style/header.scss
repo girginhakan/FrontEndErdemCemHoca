@@ -1,12 +1,38 @@
 nav{
-    // background: linear-gradient(#006769,#ff440000);
-    // background: linear-gradient(to right bottom, #006769, #65b61a, #006769);
     background: linear-gradient(to right top, #0d4445, #1b5d56, #307664, #4c906e, #6da976, #72ab6f, #78ad67, #7fae5f, #659948, #4a8532, #2e711b, #065d00);
     color: white;
     display: flex;
     justify-content: space-between;
     padding: 15px 25px;
 
+//---------------------
+    .user-info {
+      display: flex;
+      align-items: center;
+  
+      .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+  
+      .user-details {
+        display: flex;
+        flex-direction: column;
+        color: white;
+  
+        .user-email {
+          font-weight: bold;
+        }
+  
+        .user-role {
+          font-size: 0.8rem;
+          color: #ccc; // Role rengini biraz daha açık yapabilirsiniz
+        }
+      }
+    }
+//--------------------------------
     .brand{
         font-size: 20px;
         display: flex;
@@ -21,7 +47,7 @@ nav{
         list-style: none;
         display: flex;
         align-items: center;
-        gap: 25px;
+        gap: 45px;
         li{
             
             .active{
@@ -55,55 +81,50 @@ nav{
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
 
-footer {
-  background: linear-gradient(to right top, #0d4445, #1b5d56, #307664, #4c906e, #6da976, #72ab6f, #78ad67, #7fae5f, #659948, #4a8532, #2e711b, #065d00);
-  letter-spacing: 1px;
-  color: white;
-  padding: 20px;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: auto;
-  
-  .contact-info,
-  .social-media {
-    h2 {
-      margin-bottom: 10px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      li {
-        margin-bottom: 10px;
-      }
-    }
+
+  .content {
+    flex: 1; // İçeriği esneterek footer'ı alta iter
   }
+  
+  footer {
+    background: linear-gradient(to right top, #0d4445, #1b5d56, #307664, #4c906e, #6da976, #72ab6f, #78ad67, #7fae5f, #659948, #4a8532, #2e711b, #065d00);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    letter-spacing: 1px;
+    margin-top: 100px;
+    
 
-  .social-media {
-    ul {
-      display: flex;
-      justify-content: center;
-      li {
-        margin-right: 10px;
-        &:last-child {
-          margin-right: 0;
-        }
-        a {
-          text-decoration: none;
-          color: white;
-          &:hover {
-            text-decoration: underline;
+    .contact-info, .social-media {
+      margin-bottom: 1rem;
+  
+      h2 {
+        margin-bottom: 0.5rem;
+        color: white;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          margin-bottom: 0.5rem;
+  
+          a {
+            color: white;
+            text-decoration: none;
+  
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
     }
   }
-}
-  

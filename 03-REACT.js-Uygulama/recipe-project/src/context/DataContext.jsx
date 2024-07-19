@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { Flip, toast } from "react-toastify";
 
 const DataContext = createContext();
 
@@ -13,6 +14,19 @@ export const DataProvider = ({ children }) => {
     if (!secilenRecipe) {
       setRecipes((prev) => [...prev, yeni]);
       const response = await axios.post(url, yeni);
+      // toastify çalışmadı formdaki onchangeden dolayı
+      // toast.warn('Add New Recipe', {
+      //   position: "bottom-right",
+      //   autoClose: 3000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "colored",
+      //   transition: Flip,
+      //   });
+      
     } else {
       url += `/${secilenRecipe.id}`;
       const response2 = await axios.put(url, yeni);
@@ -25,6 +39,7 @@ export const DataProvider = ({ children }) => {
           }
         })
       );
+      
       setSecilenRecipe("");
     }
   };

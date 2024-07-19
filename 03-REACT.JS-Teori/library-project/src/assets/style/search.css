@@ -7,10 +7,27 @@
     padding: 5px 10px;
     background-color: #131842;
    color: white;
-   max-width: 500px;
-
+   max-width: 100%;
+justify-content: space-between;
     margin: 30px auto;
 
+  }
+  .kullanici{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+  }
+  .kullanici .card{
+    height: 60px;
+    width: 300px;
+  }
+  .kullanici .card img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
   }
   
   .input-field {
@@ -26,7 +43,7 @@
   }
   .input-field:focus{
   color: white;
-  border: 1px solid white;
+  
 }
   
   .input-field::placeholder {
@@ -35,5 +52,10 @@
     
   }
   
+  .search-bar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
   
  

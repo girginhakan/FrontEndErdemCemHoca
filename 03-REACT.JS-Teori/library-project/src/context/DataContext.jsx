@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useReducer } from "react";
 import { initialState, reducer } from "../reducer/reducer";
+import { Flip, toast } from "react-toastify";
 
 //context oluşturulması
 const DataContext = createContext();
@@ -23,6 +24,17 @@ export const DataProvider = ({children}) => {
       //case_12
       // setKitaplar((prev) => [...prev, yeni]);
       dispatch({type:"kitapEkle",yeni});
+      toast.success('Yeni kitap Eklendi', {
+        position: "bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Flip,
+        });
 
       const response = await axios.post(url, yeni);
     } else {
@@ -42,6 +54,17 @@ export const DataProvider = ({children}) => {
       // );
       // setSecilenKitap("");
       dispatch({type:"kitapDuzenle",yeni});
+      toast.warn('Kitap Düzenlendi', {
+        position:"bottom-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Flip,
+        });
     }
   };
   const kitapSil = async (id) => {
@@ -51,6 +74,17 @@ export const DataProvider = ({children}) => {
     // );
     //case_13
     dispatch({type:"kitapSil",id});
+    toast.error('Kitap Silindi', {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Flip,
+      });
     const url = `http://localhost:3005/kitaplar/${id}`;
     // const response = await axios.delete(url); //Veriyi database den sildiği için veri güvenliği açısından sıkıntılı bir durum o yüzden patch kullanarak kişi kitabı sildiğini düşünürken database den silinmeyecek
     const response = await axios.patch(url, { isDeleted: true });
