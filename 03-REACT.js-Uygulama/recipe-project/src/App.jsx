@@ -17,6 +17,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+      <ToastContainer/>
         <Routes>
           <Route path="/*" element={<Loading />} />
           <Route path="recipe-app" element={<Header />}>
@@ -27,10 +28,9 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
           <Route path="login" element={<LoginPage />} />
-
           </Route>
         </Routes>
-      <ToastContainer/>
+      
       </BrowserRouter>
     </AuthProvider>
   );
