@@ -12,27 +12,16 @@ export const DataProvider = ({ children }) => {
   const recipeEkle = async (yeni) => {
     let url = "http://localhost:3000/fakeRecipes";
     if (!secilenRecipe) {
-      setRecipes((prev) => [...prev, yeni]);
       const response = await axios.post(url, yeni);
-      // toastify çalışmadı formdaki onchangeden dolayı
-      // toast.warn('Add New Recipe', {
-      //   position: "bottom-right",
-      //   autoClose: 3000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "colored",
-      //   transition: Flip,
-      //   });
+      setRecipes((prev) => [...prev, response.data]);
+     
       
     } else {
       url += `/${secilenRecipe.id}`;
       const response2 = await axios.put(url, yeni);
       setRecipes((prev) =>
         prev.map((recipe) => {
-          if (recipe.id0 == secilenRecipe.id) {
+          if (recipe.id == secilenRecipe.id) {
             return { ...response2.data };
           } else {
             return { ...recipe };
@@ -43,6 +32,7 @@ export const DataProvider = ({ children }) => {
       setSecilenRecipe("");
     }
   };
+
   const recipeSil = async (id) => {
     setRecipes((prev) =>
       prev.filter((statedenGelen) => statedenGelen.id !== id)
